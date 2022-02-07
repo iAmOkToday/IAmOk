@@ -18,9 +18,7 @@ jobs:
       - name: 'install requirements'
         run: npm install
       - name: 'start'
-        run: echo 'npm start ${{ secrets.ID }} ${{ secrets.PSW }}'
-      - name: 'yet another start'
         env:
           ID: ${{ secrets.ID }}
           PSW: ${{ secrets.PSW }}
-        run: npm start
+        run: npm start ID PSW
