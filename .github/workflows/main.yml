@@ -1,0 +1,21 @@
+name: 'I Am OK Bot'
+
+on:
+  push:
+    branches: 
+      - main
+  schedule:
+    - cron: '30 9 * * *'
+
+jobs:
+  i-am-ok:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'common checkout'
+        uses: actions/checkout@v2
+      - name: 'nodejs setup'
+        uses: actions/setup-node@v2
+      - name: 'install requirements'
+        run: npm install
+      - name: 'start'
+        run: npm start ${{ secrets.ID }} ${{ secrets.PSW }}
