@@ -21,4 +21,4 @@ jobs:
         env:
           ID: ${{ secrets.ID }}
           PSW: ${{ secrets.PSW }}
-        run: npm start ID PSW
+        run: npm start $ID $PSW
